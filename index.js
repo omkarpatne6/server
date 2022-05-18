@@ -74,7 +74,7 @@ app.get('/getinfo', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.send("Hello world my name is Omkar Ketan Patne")
+    res.send("Hello, this is a home page")
 })
 
 app.listen(port, () => {
