@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 require('./conn.js');
 const app = express();
