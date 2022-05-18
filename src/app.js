@@ -9,6 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors()); 
 
+console.log(process.env.PORT)
+
+
 app.post("/timepass", (req, res) => {
 
     try {
