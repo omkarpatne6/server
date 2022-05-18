@@ -6,7 +6,7 @@ const cors = require("cors");
 const Mydatabase = require('./model.js');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors()); 
 
 app.post("/timepass", (req, res) => {
 
