@@ -12,7 +12,7 @@ app.post("/timepass", (req, res) => {
 
     try {
 
-        const { name, email } = req.body;
+        const { name, email, description } = req.body;
 
         if (!name || !email) {
 
@@ -23,6 +23,7 @@ app.post("/timepass", (req, res) => {
                 name,
                 email,
                 slug: name.split(' ').join('-').replace(/[,*+~.()'"!:@]/g, '').toLowerCase(),
+                description,
                 date : new Date().toDateString()
             });
 
