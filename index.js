@@ -63,10 +63,10 @@ app.get('/fetchdata', async (req, res) => {
     }
 })
 
-app.get('/getinfo', async (req, res) => {
+app.get('/getinfo/:slug', async (req, res) => {
 
     try {
-        const showdata = await Mydatabase.findOne({ slug: req.query.slug });
+        const showdata = await Mydatabase.findOne({ slug: req.params.slug });
         res.send(showdata)
     } catch (error) {
         res.send(error)
