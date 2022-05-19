@@ -53,7 +53,7 @@ app.post("/timepass", (req, res) => {
     }
 })
 
-app.get('/fetchdata', async (req, res) => {
+app.get('/fetchdata', async (req, res) => { 
 
     try {
         const showdata = await Mydatabase.find();
