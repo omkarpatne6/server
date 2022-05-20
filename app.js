@@ -1,8 +1,8 @@
-// const compression = require('compression');
+const compression = require('compression');
 const express = require('express');
 require('./conn.js');
 const app = express();
-// app.use(compression());
+app.use(compression());
 const port = process.env.PORT || 8000;
 const cors = require("cors");
 const Mydatabase = require('./model.js');
