@@ -30,9 +30,8 @@ const schema = new mongoose.Schema({
         required : true,
         trim : true
     },
-    date : {
-        type : String
-    }
+    date : String,
+    datestring : String
 })
 
 const Mydatabase = new mongoose.model('Omkarpatne', schema);

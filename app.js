@@ -26,7 +26,8 @@ app.post("/timepass", (req, res) => {
                 email,
                 slug: name.split(' ').join('-').replace(/[,*+~.()'"!:@]/g, '').toLowerCase(),
                 description,
-                date : new Date().toDateString()
+                date : Date(),
+                datestring :  new Date().toDateString() + " " + new Date().toLocaleTimeString()
             });
 
             Mydatabase.findOne({ email: email })
@@ -60,6 +61,16 @@ app.get('/fetchdata', async (req, res) => {
 
     try {
         const showdata = await Mydatabase.find();
+        res.send(showdata)
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+app.get('/recentposts', async (req, res) => { 
+
+    try {
+        const showdata = await Mydatabase.find().limit(3).sort({date : -1});
         res.send(showdata)
     } catch (error) {
         res.send(error)
