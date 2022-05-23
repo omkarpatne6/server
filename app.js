@@ -67,6 +67,7 @@ app.get('/fetchdata', async (req, res) => {
     }
 })
 
+// show recents last 3 posts
 app.get('/recentposts', async (req, res) => { 
 
     try {
@@ -84,6 +85,27 @@ app.get('/getinfo/:slug', async (req, res) => {
         res.send(showdata)
     } catch (error) {
         res.send(error)
+    }
+})
+
+app.put('/update', async (req,res) => {
+
+    const _id = req.query.id;
+
+    const body = req.body;
+
+    console.log(_id);
+    try {
+
+        const update =  await Mydatabase.updateMany( {_id}, body, {
+            new : true,
+            runValidators: true
+        } );
+        res.send(update)
+        
+    } catch (error) {
+        res.send(error)
+        
     }
 })
 
